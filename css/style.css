@@ -159,7 +159,7 @@ body{
     background-color: #44214a;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     height: 79%;
-    min-height: 900px;
+    min-height: 750px;
     
 
 }
@@ -644,26 +644,33 @@ body{
     min-height: 600px;
 }
 .contact{
+    width: 60%;
+}
+.contact-column{
     display: flex;
     align-content: center;
     justify-content: center;
-    width: 60%;
-   padding-top: 30px;
+    width: 100%;
+    padding-top: 30px;
+    
 }
-.contact-column{
-    justify-content: center;
-    flex: 100%;
-}
-.contact input {
+#email {
     font-size: 28px;
     font-weight: bold;
-    width: 75%;
+    min-width: 500px;
+}
+#sub-button {
+    background-color: #ffdf00;
+    border-radius: 25px;
+    width: 150px;
+    font-size: 28px;
+    font-weight: bold;
 }
 .contact textarea {
-    width:75%;
-    height:50%;
     font-size: 28px;
     font-weight: bold;
+    min-height: 500px;
+    min-width: 500px;
 }
 .contact label{
     font-weight: bold;
