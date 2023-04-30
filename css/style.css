@@ -39,6 +39,7 @@ header {
 }
 
 /* About Me Page */
+
 .about-container{
     display: flex;
     align-content: center;
@@ -46,6 +47,7 @@ header {
     background-color: #44214a;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     height: 79%;
+    min-height: 900px;
     padding-top: 30px;
 
 }
@@ -98,6 +100,55 @@ header {
     
 }
 
+@media only screen and (max-width: 600px) {
+    .about-container {
+      height:100%;
+    }
+    .about {
+    display: grid;
+    gap:15px;
+    grid-template-columns: 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .about-title {
+        grid-column: 1/ 2;
+        grid-row: 2 /3;
+        text-align: center;
+        display: grid;
+        align-content: center;
+        justify-content: center;  
+    }
+    .about-desc {
+        grid-column: 1/ 2;
+        grid-row: 3/4;
+        text-align: center;
+        display: grid;
+        align-content: center;
+        justify-content: center;  
+    }
+    .about-quote {
+        grid-column: 1/ 2;
+        grid-row: 4 /5;
+        font-style: italic;
+        color: gray;
+    }
+    
+    .about-img {
+        grid-column: 1/ 2;
+        grid-row: 1 / 2;
+        height: 175px;
+        display: grid;
+        align-content: center;
+        justify-content: center;  
+    }
+    .about-img img{
+        width: 100%;
+        border-radius: 25px;
+        max-width: 250px;
+        
+    }
+
+  }
 
 /* Portfolio Page */
 .portfolio-container {
@@ -107,6 +158,7 @@ header {
     background-color: #44214a;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     height: 81.5%;
+    min-height: 900px;
 }
 
 .portfolio {
@@ -215,13 +267,14 @@ header {
     justify-content: center;
     background-color: #44214a;
     height: 75%;
+    min-height: 900px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     padding: 30px;
 
 }
 .tools{
     display: grid;
-    grid-template-columns:  repeat(3, 1fr);;
+    grid-template-columns:  repeat(3, 1fr);
     grid-template-rows: auto;
     align-content: center;
     justify-content: center;
@@ -260,6 +313,23 @@ header {
     justify-content: center;
     align-content: center;
 }
+@media only screen and (max-width: 600px) {
+    .tools-container {
+        background-color: #44214a;
+        height: 100%;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+    .tools{
+        display: grid;
+        grid-template-columns:  1fr;
+        grid-template-rows: auto;
+        align-content: center;
+        justify-content: center;
+        width: 100%;
+        list-style-type: none;
+        padding: 30px;
+    }
+}
 
 /* Rating for tools*/
 
@@ -269,12 +339,13 @@ header {
   }
 
 /* Photo Page */
-.photo-container{
+.photo-container {
     display: flex;
     align-content: center;
     justify-content: center;
     background-color: #44214a;
     height: 81.5%;
+    min-height: 900px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     padding: 30px;
 }
@@ -320,13 +391,42 @@ header {
     display: grid;
     align-content: center;
     justify-content: center;
-    
-    
 }
 
 .img img {
     width: 100%;
     max-width: 250px;
+}
+@media only screen and (max-width: 600px) {
+    .photo-container {
+        background-color: #44214a;
+        height: 100%;
+        min-height: 1750px;
+        box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    }
+    .photo {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat (10, 1fr);
+        align-content: center;
+        justify-content: center;
+        grid-gap: 15px;
+        background-color: #44214a;
+        height:100%;
+    }
+    #item1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        
+    }
+    .img img {
+        width: 100%;
+        max-width: 150px;
+    }
+    .photo h1{
+        font-size: 32px;
+        text-align: center;
+    }
 }
 
 /* Contact Page */
@@ -337,6 +437,7 @@ header {
     background-color: #44214a;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     height: 81.5%;
+    min-height: 900px;
 }
 .contact{
     display: flex;
