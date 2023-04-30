@@ -160,7 +160,7 @@ body{
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     height: 79%;
     min-height: 900px;
-    padding-top: 30px;
+    
 
 }
 
@@ -168,10 +168,9 @@ body{
     display: grid;
     gap:15px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: .25fr .65fr .5fr;
+    grid-template-rows: .25fr .25fr .5fr;
     width: 60%;
     color: white;
-    padding: 50px 30px 50px 30px;
 }
 
 .about-title {
@@ -179,7 +178,7 @@ body{
     grid-row: 1 /2;
     text-align: center;
     display: grid;
-    align-content: center;
+    align-content:end;
     justify-content: center;  
 }
 .about-desc {
@@ -252,8 +251,7 @@ body{
         display: grid;
         align-content: center;
         justify-content: center;  
-        padding-bottom: 30px;
-    }
+    }   
     .about-img img{
         width: 100%;
         border-radius: 25px;
@@ -278,13 +276,13 @@ body{
     display: grid;
     gap:5px;
     grid-template-columns: 1fr 1fr .5fr 1fr 1fr;
-    grid-template-rows: 1fr 1.5fr 1fr;
+    grid-template-rows: .5fr 1.5fr .75fr 1.5fr .75fr;
     width: 60%;
-    padding: 30px;
     color: white;
     text-align: center;
     
 }
+/**/
 .port-item1 { 
     grid-column: 1 / 6;
     grid-row: 1 /2;
@@ -292,23 +290,10 @@ body{
     justify-content: center;
     align-items: center;
 }
+/* First Portfolio*/
 .port-item2 {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.port-item3 {
-    grid-column: 4 / 6;
-    grid-row: 2 / 3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.port-item4 {
-    grid-column: 1 / 3;
-    grid-row: 4 / 5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -319,10 +304,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .code-text1{
     grid-column: 2 / 3;
     grid-row: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Second Portfolio*/
+.port-item3 {
+    grid-column: 4 / 6;
+    grid-row: 2 / 3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -341,6 +335,14 @@ body{
     justify-content: center;
     align-items: center;
 }
+.port-item4 {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Third Portfolio*/
 .live-text3 {
     grid-column: 1 / 2;
     grid-row: 5 / 6;
@@ -472,11 +474,9 @@ body{
     align-content: center;
     justify-content: center;
     background-color: #44214a;
-    height: 75%;
+    
     min-height: 900px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    padding: 30px;
-
 }
 .tools{
     display: grid;
@@ -484,9 +484,8 @@ body{
     grid-template-rows: auto;
     align-content: center;
     justify-content: center;
-    width: 100%;
+    width: 60%;
     list-style-type: none;
-    padding: 30px;
 }
 .tools-column{
     color: white;
@@ -555,7 +554,6 @@ body{
     height: 81.5%;
     min-height: 900px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-    padding: 30px;
 }
 
 .photo a:visited {
@@ -578,7 +576,7 @@ body{
     grid-gap: 15px;
     width: 60%;
     height: 100%;
-    background-color: #44214a;
+    
     
 }
 .instagram {
@@ -643,14 +641,14 @@ body{
     background-color: #44214a;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     height: 81.5%;
-    min-height: 900px;
+    min-height: 600px;
 }
 .contact{
     display: flex;
     align-content: center;
     justify-content: center;
     width: 60%;
-    padding: 30px 0 0 100px;
+   padding-top: 30px;
 }
 .contact-column{
     justify-content: center;
