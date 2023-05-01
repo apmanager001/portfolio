@@ -724,7 +724,7 @@ body{
         justify-content: center;
         background-color: #44214a;
         box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-        
+        height: 800px;
     }
 }
 
