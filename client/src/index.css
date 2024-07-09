@@ -7,7 +7,6 @@
   padding: 0;
   border: 0;
 
-<<<<<<< HEAD
   color-scheme: light dark;
   --text: #0b130b;
   --background: #f7f9f6;
@@ -16,15 +15,13 @@
   --button: #849ba5;
   --accent: #889ab9;
 
-=======
->>>>>>> 62aa73246abcb1f7a6ac8cd673738b8a41b563d1
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-<<<<<<< HEAD
+
 [data-theme="dark"] {
   --text: #ecf4ec;
   --background: #070906;
@@ -33,5 +30,3 @@
   --button: #2a3e48;
   --accent: #465877;
 }
-=======
->>>>>>> 62aa73246abcb1f7a6ac8cd673738b8a41b563d1
