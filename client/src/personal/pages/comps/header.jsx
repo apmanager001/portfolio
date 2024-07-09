@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import TopHeader from '../../../pages/comps/topHeader'
 import styles from '../css/header.module.css'
 import {Link} from 'react-router-dom'
 
@@ -24,60 +23,65 @@ const Header = () => {
   }, []);
 
   return (
-      <div className={styles.header}>
-        <TopHeader />
-        <div className={`${styles.title} ${styles.mobileNone}`}>
-          <Link to="/personal" >
-            Robert Foley
-          </Link>
+    <div className={styles.header}>
+      <div className={`${styles.title} ${styles.mobileNone}`}>
+        <Link to="/">Robert Foley</Link>
+      </div>
+      <div className={`${styles.links} ${styles.mobileNone}`}>
+        <Link to="/me" className={styles.about}>
+          Me
+        </Link>
+        <Link to="/portfolio" className={styles.about}>
+          Portfolio
+        </Link>
+        <Link to="/blog" className={styles.about}>
+          Blog
+        </Link>
+        <Link to="/photography" className={styles.photography}>
+          Photography
+        </Link>
+        <Link to="/contact" className={styles.contact}>
+          Contact
+        </Link>
+      </div>
+      <header className={styles.mobileNav}>
+        <div className={styles.mobileTitle}>
+          <h1>
+            <Link to="/">Robert Foley</Link>
+          </h1>
         </div>
-        <div className={`${styles.links} ${styles.mobileNone}`}>
-          <Link to="/personal/me" className={styles.about}>
+        <div className={styles.mobileMenu}>
+          <span id={styles.mobileMenu}>
+            <div></div>
+            <div></div>
+            <div></div>
+          </span>
+        </div>
+      </header>
+
+      <nav className={styles.mobileNav2}>
+        <h2>
+          <Link to="/me" className={styles.about}>
             Me
           </Link>
-          <Link to="/personal/blog" className={styles.about}>
+        </h2>
+        <h2>
+          <Link to="/blog" className={styles.portfolio}>
             Blog
           </Link>
-          <Link to="/personal/photography" className={styles.photography}>
+        </h2>
+        <h2>
+          <Link to="/photography" className={styles.photography}>
             Photography
           </Link>
-          <Link to="/personal/contact" className={styles.contact}>
+        </h2>
+        <h2>
+          <Link to="/contact" className={styles.contact}>
             Contact
           </Link>
-        </div>
-        <header className={styles.mobileNav}>
-                  <div className={styles.mobileTitle}>
-                  <h1>
-                  <Link to='/personal'>
-                    Robert Foley
-                  </Link>
-                  </h1>
-                  </div>
-                  <div className={styles.mobileMenu}>
-                  <span id={styles.mobileMenu}>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                  </span>
-                  </div>
-                  
-              </header>
-              
-              <nav className={styles.mobileNav2}>
-                  <h2><Link to="/personal/me" className={styles.about}>
-                        Me
-                      </Link></h2>
-                  <h2><Link to="/personal/blog" className={styles.portfolio}>
-                        Blog
-                      </Link></h2>
-                  <h2><Link to="/personal/photography" className={styles.photography}>
-                        Photography
-                      </Link></h2>
-                  <h2><Link to="/personal/contact" className={styles.contact}>
-                        Contact
-                      </Link></h2>
-              </nav>
-        </div>
+        </h2>
+      </nav>
+    </div>
   );
 };
 

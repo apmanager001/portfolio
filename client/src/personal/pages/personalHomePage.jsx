@@ -9,7 +9,7 @@ const PersonalHomePage = () => {
       <Header />
         <div className={styles.personalContainer}>
 
-          hello
+          
         </div>
       <Footer />
     </>

@@ -25,19 +25,19 @@ function App() {
     <>
       <Toaster position="top-center" toastOptions={{ duration: 8000 }} />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/portfolio" element={<Homepage />} />
 
         {/* <Route path="/" element={<Home />} /> */}
 
         <Route path="/admin" element={<Admin />} />
-        <Route path="/personal" element={<PersonalHomePage />} />
-        <Route path="/personal/me" element={<Me />} />
+        <Route path="/" element={<PersonalHomePage />} />
+        <Route path="/me" element={<Me />} />
         <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/personal/photography" element={<Photo />} />
-        <Route path="/personal/blog" element={<Blog />} />
-        <Route path="/personal/contact" element={<Contact />} />
-        <Route path="/personal/login" element={<Login />} />
-        <Route path="/personal/register" element={<Register />} />
+        <Route path="/photography" element={<Photo />} />
+        <Route path="//blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );

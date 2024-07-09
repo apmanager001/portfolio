@@ -15,8 +15,10 @@ const Footer = () => {
     <div class={styles.linkin}>       
         <a href="https://www.linkedin.com/in/robertfoleyiii/" class={styles.footerItem} target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a></div>
     <div class={styles.footerEmail}>
-    <FontAwesomeIcon icon={faEnvelope} className={styles.icon}/>  
-      robertfoleyiii@gmail.com
+      <a href="mailto:robertfoleyiii@gmail.com">
+        <FontAwesomeIcon icon={faEnvelope} className={styles.icon}/>  
+          robertfoleyiii@gmail.com
+      </a>
     </div>
   </div>
   )
