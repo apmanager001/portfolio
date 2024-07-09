@@ -12,10 +12,8 @@ import Login from "./personal/features/login/login";
 import Register from "./personal/features/login/register";
 import axios from "axios";
 import "./App.css";
-<<<<<<< HEAD
+
 import Homepage from "./portfolio/homepage";
-=======
->>>>>>> 62aa73246abcb1f7a6ac8cd673738b8a41b563d1
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -27,11 +25,10 @@ function App() {
     <>
       <Toaster position="top-center" toastOptions={{ duration: 8000 }} />
       <Routes>
-<<<<<<< HEAD
         <Route path="/" element={<Homepage />} />
-=======
-        <Route path="/" element={<Home />} />
->>>>>>> 62aa73246abcb1f7a6ac8cd673738b8a41b563d1
+
+        {/* <Route path="/" element={<Home />} /> */}
+
         <Route path="/admin" element={<Admin />} />
         <Route path="/personal" element={<PersonalHomePage />} />
         <Route path="/personal/me" element={<Me />} />
