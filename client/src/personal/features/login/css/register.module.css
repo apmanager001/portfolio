@@ -1,0 +1,27 @@
+body {
+    background-color: white;
+}
+.registerContainer {
+    padding-top: 250px;
+    color: black;
+    min-height: 600px;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.registerContainer input{
+    font-size: 32px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 0;
+    outline: none;
+    background-color: lightgray;
+}
+#button{
+    background-color: lightgreen;
+}

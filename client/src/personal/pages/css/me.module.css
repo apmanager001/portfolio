@@ -1,0 +1,12 @@
+.meContainer {
+    padding-top: 200px;
+    margin: 0 100px 0 100px;
+    height: 700px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.meContainer img {
+    height: 300px;
+    border-radius: 25%;
+}

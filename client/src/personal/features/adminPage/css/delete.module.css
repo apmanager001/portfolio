@@ -1,0 +1,8 @@
+#delete{
+    background-color: darkred;
+    border: 0;
+    padding: 5px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}

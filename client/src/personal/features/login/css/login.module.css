@@ -1,0 +1,44 @@
+.loginContainer {
+    padding-top: 300px;
+    color: black;
+    min-height: 600px;
+}
+.loginContainer h2 {
+    padding: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.loginContainer input{
+    font-size: 32px;
+    padding: 8px;
+    border-radius: 8px;
+    border: 0;
+    outline: none;
+    background-color: lightgray;
+}
+
+#button{
+    background-color: lightgreen;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .loginContainer{
+        padding-top: 200px;
+        padding-bottom: 50px;
+        margin: 0;
+        min-height: 600px;
+    }
+    .loginContainer p {
+        width: 80%;
+    }
+    .loginContainer input{
+        width: 90%;
+    }
+
+}

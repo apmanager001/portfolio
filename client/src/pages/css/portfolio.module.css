@@ -1,0 +1,187 @@
+/*Body in the middle*/
+.fullPort {
+    background-color: gray;
+}
+.title {
+    padding: 50px;
+    color: black;
+}
+
+.portfolio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+}
+.portfolio>* {
+    flex: 1 1 250px;
+}
+
+.portSections {
+    background-color: #242424;
+    border-radius: 25px;
+    margin: 50px;
+    color: white;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+
+.portText {
+    margin: 25px;
+}
+.portSections h2{
+    text-align: center;
+}
+
+.portOne{
+    position: relative;
+    height: 500px;
+}
+.portTwo{
+    position: relative;
+    height: 500px;
+    
+}
+.portThree{
+    position: relative;
+    height: 500px;
+}
+.portText a:link {
+    color: hotpink;
+}
+.portText a:visited {
+    color: green;
+}
+.portText a:hover {
+    color: red;
+}
+
+
+.imageOne {
+    background-image: url("../../assets/habit.jpg");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 50%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  
+}
+.imageTwo {
+    background-image: url("../../assets/paint.jpg");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 50%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+.imageThree {
+    background-image: url("../../assets/habit.jpg");
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 50%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+/*Mobile*/
+
+@media screen and (max-width: 600px) {
+    .portfolio{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-left: 0%;
+        margin-right: 0%;
+        background-color: lightblue;
+    }
+    .portfolio>* {
+        flex: 1 1 250px;
+    }
+    
+    .portSections {
+        background-color: #242424;
+        border-radius: 0;
+        margin: 50px;
+        color: white;
+        padding-bottom: 25px;
+    }
+    
+    .portText {
+        margin: 25px;
+        padding-bottom: 25px;
+    }
+    
+    .portSections h2{
+        text-align: center;
+    }
+    
+    .portOne{
+        position: relative;
+        height: 500px;
+    }
+    .portTwo{
+        position: relative;
+        height: 500px;
+        
+    }
+    .portThree{
+        position: relative;
+        height: 500px;
+    }
+    .portText a:link {
+        color: hotpink;
+    }
+    .portText a:visited {
+        color: green;
+    }
+    .portText a:hover {
+        color: red;
+    }
+    
+    
+    .imageOne {
+        background-image: url("../../assets/habit.jpg");
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        height: 50%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      
+    }
+    .imageTwo {
+        background-image: url("../../assets/paint.jpg");
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        height: 50%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .imageThree {
+        background-image: url("../../assets/habit.jpg");
+        background-size: cover;
+        background-position: center; 
+        background-repeat: no-repeat; 
+        height: 50%;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+  }
+
+
+
+/*Github map on bottom*/
+.App {
+    display: flex;
+    justify-content: center;
+    margin: 25px;
+}

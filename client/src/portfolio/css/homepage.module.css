@@ -1,0 +1,251 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "stats stats stats"
+    "profile projects techStack"
+    "workExperience resume resume"
+    "contact contact contact";
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--background);
+  font-weight: 700px;
+  color: var(--text);
+  grid-template-columns: 1.5fr .5fr .5fr;
+}
+
+h3, h2{
+    color: var(--text);
+}
+
+.stats {
+  grid-area: stats;
+  display: flex;
+  justify-content: space-between;
+}
+.glow {
+box-shadow: 0 0 3px rgba(98, 128, 218, 0.8),
+              0 0 6px rgba(98, 128, 218, 0.6),
+              0 0 9px rgba(98, 128, 218, 0.4),
+              0 0 12px rgba(98, 128, 218, 0.2); /* Glow effect */
+transition: box-shadow 0.3s ease;
+}
+.glow:hover {
+  box-shadow: 0 0 6px rgba(98, 128, 218, 1),
+              0 0 12px rgba(98, 128, 218, 0.8),
+              0 0 18px rgba(98, 128, 218, 0.6),
+              0 0 24px rgba(98, 128, 218, 0.4); /* Stronger glow on hover */
+}
+
+#name {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.statBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary);
+    padding: 5px;
+    flex: 1;
+    margin: 0 10px;
+    border-radius: 15px;
+}
+#cv {
+  background-color: var(--button);
+  border: 0;
+  padding: 15px;
+  border-radius: 15px;
+}
+#cv:hover {
+  background-color: var(--accent);
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  grid-area: profile;
+  background-color: var(--secondary);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.profileHeader {
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+.profileHeader img {
+    height: 150px;
+    border-radius: 50px;
+}
+
+.profileInfo {
+  display: flex;
+  justify-content: left;
+  margin: 25px 0 0 25px;
+}
+
+.bioContainer {
+    text-align: left;
+    padding: 25px;
+    width: 60%;
+    border-radius: 15px;
+    background-color: var(--accent);
+}
+
+.projects, .techStack, .workExperience, .resume, .contact {
+  background-color: var(--secondary);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: projects;
+    overflow-y: auto;
+}
+
+.techStack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: techStack;
+    overflow-y: auto;
+}
+.techDiv, .projectDiv {
+    background-color: var(--accent);
+    border-radius: 15px;
+    padding: 15px;
+    width: 50%;
+    margin: 5px;
+}
+.projects h3 {
+    position: static;
+    border-bottom: 2px var(--text);
+}
+
+.workExperience {
+  grid-area: workExperience;
+}
+
+.resume {
+  grid-area: resume;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  font-size: 24px;
+  font-weight: 600;
+  gap: 15px;
+}
+.company {
+  text-align: left;
+  padding-left: 25px;
+}
+.title {
+  text-align: left;
+  padding-left: 50px;
+  
+}
+.date {
+  text-align: left;
+  padding-left: 75px;
+}
+
+
+.contact {
+  grid-area: contact;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 24px;
+}
+.icon {
+    padding-right: 15px;
+}
+
+
+
+
+
+
+/* /* .gradientBackground {
+  background: linear-gradient(45deg, #465877, #889ab9);
+}
+
+/* Use the gradientBackground class for the elements you want to apply the gradient to */
+
+/* .statBox,
+.profile,
+.projects,
+.techStack,
+.workExperience,
+.resume,
+.contact {
+  background: linear-gradient(45deg, #465877, #889ab9);
+  padding: 20px;
+  border-radius: 15px; 
+} */
+@media (max-width: 500px) {
+  .container {
+    grid-template-areas:
+      "stats"
+      "profile"
+      "projects"
+      "techStack"
+      "workExperience"
+      "resume"
+      "contact";
+    grid-template-columns: 1fr; /* Single column layout */
+  }
+  .stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .statBox {
+    min-height: 50px;
+  }
+  .profile{
+    max-width: 350px;
+  }
+  .profileHeader {
+    gap: 25px;
+  }
+  .profileInfo {
+    justify-content: center;
+  }
+  .bioContainer {
+    width: 80%;
+  }
+  .projects{
+    max-width: 325px;
+  }
+  .techStack{
+    max-width: 325px;
+  }
+  .workExperience{
+    max-width: 325px;
+  }
+  .resume{
+    max-width: 325px;
+  }
+  .contact{
+    max-width: 325px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact {
+  grid-area: contact;
+  text-align: center;
+  
+  
+  font-size: 24px;
+}
+}

@@ -1,0 +1,12 @@
+body{
+    background-color: black;
+}
+.personalContainer {
+    background-image: url('/mountain.jpeg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; 
+    padding-top: 200px;
+    height: 700px;
+    opacity: .2;
+}

@@ -1,0 +1,21 @@
+.about {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+.about h2 {
+    padding-left: 0;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+  .about {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    margin: 15px;
+    padding: 5px;
+  }
+  
+}

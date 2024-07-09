@@ -1,0 +1,19 @@
+.newsletterContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+    margin: 0 25% 0 25%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .newsletterContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 50px;
+        margin: 0 ;
+    }
+
+}

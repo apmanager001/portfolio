@@ -1,0 +1,51 @@
+.adminContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-top: 100px;
+    height: 750px;
+    color: black;
+    
+}
+
+.mainContent {
+  flex-grow: 1;
+  overflow-y: auto; 
+}
+.navBar {
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    font-size: 24px;
+    padding: 10px 0 10px 0;
+    background-color: lightgray;
+    margin: 0 10% 0 10%;
+    color: black;
+}
+.icon {
+    padding-right: 5px;
+}
+
+#logout {
+    border-radius: 8px;
+    border: .1;
+    outline: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .adminContainer {
+        margin-top: 110px;
+    }
+
+    .navBar {
+        justify-content: flex-end;
+        font-size: 16px;
+        gap:10px;
+        padding: 10px ;
+        background-color: lightgray;
+        margin: 0;
+        color: black;
+    }
+}

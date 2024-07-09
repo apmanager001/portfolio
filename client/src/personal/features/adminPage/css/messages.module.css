@@ -1,0 +1,40 @@
+.messagesContainer {
+    padding-top: 50px; 
+    margin: 0 auto;
+    overflow: auto;
+    flex-grow: 1;
+    padding-bottom: 25px;
+}
+.gridContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow: auto;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    height: 100%;
+    gap: 10px;
+}
+.itemContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    width: 500px;
+    height: 200px;
+    background-color: beige;
+    margin: 0px auto;
+}
+.email a{
+    text-decoration: none;
+    color: black;
+}
+.relativeContainer {
+    padding: 15px;
+    text-align: left;
+}
+.itemFrom {
+    font-weight: 700;
+}
+
+

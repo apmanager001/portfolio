@@ -1,0 +1,83 @@
+.contactForm{
+    
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    gap: 30px;
+    
+}
+.contactForm h1 {
+    color: white;
+    font-size: 32px;
+}
+
+#email {
+    font-size: 28px;
+    font-weight: bold;
+    width: 80%;
+    border: 0;
+    background-color: lightgray;
+    border-radius: 15px;
+    padding: 15px;
+    outline: none;
+}
+#message{
+    background-color: lightgray;
+    border: 0;
+    outline: none;
+    font-size: 28px;
+    font-weight: bold;
+    width: 80%;
+    height: 250px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+#sub {
+    border: 0;
+    outline: none;
+    font-size: 28px;
+    font-weight: bold;
+    background-color: #00ff00;
+    width: 150px;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .contact {
+        height: 100%;
+        padding: 15px;
+        
+    }
+    .contactForm{
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        color: white;
+        font-size: 28px;
+        font-weight: bold;
+        gap: 30px;
+        padding: 15px;
+        margin-top: 0px;
+    }
+    #email {
+        font-size: 28px;
+        font-weight: bold;
+        width: 95%;
+        border-radius: 15px;
+        padding: 15px;
+    }
+    #message{
+        font-size: 28px;
+        font-weight: bold;
+        width: 95%;
+        height: 300px;
+        border-radius: 15px;
+        padding: 15px;
+    }
+
+}

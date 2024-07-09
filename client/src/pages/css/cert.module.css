@@ -1,0 +1,14 @@
+.certContainer a{
+    text-decoration: none;
+}
+
+h2 {
+    color: #444;
+    padding-left: 50px;
+    text-align: left;
+}
+h3 {
+    display: inline;
+    color: #666;
+    margin: 0 10px 0 10px;
+}
