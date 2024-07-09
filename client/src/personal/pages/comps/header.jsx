@@ -66,6 +66,11 @@ const Header = () => {
           </Link>
         </h2>
         <h2>
+          <Link to="/portfolio" className={styles.about}>
+            Portfolio
+          </Link>
+        </h2>
+        <h2>
           <Link to="/blog" className={styles.portfolio}>
             Blog
           </Link>
