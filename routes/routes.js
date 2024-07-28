@@ -12,13 +12,13 @@ const {
 } = require("../controllers/professionalControllers");
 const cors = require("cors");
 
-const url = process.env.SERVER_URL;
+const url = [process.env.SERVER_URL, "http://localhost:5173"];
 
 //middleware
 router.use(
   cors({
     credentials: true,
-    origin: url || 'http://localhost:5173',
+    origin: url,
   })
 );
 
