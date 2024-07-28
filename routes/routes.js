@@ -18,7 +18,7 @@ const url = process.env.SERVER_URL;
 router.use(
   cors({
     credentials: true,
-    origin: url,
+    origin: url || 'http://localhost:5173',
   })
 );
 
