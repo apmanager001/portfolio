@@ -52,7 +52,7 @@ const postAddingBlog = async (req, res) => {
 
 const getBlogs = async (req, res) => {
   try {
-    const blogs = await AddBlog.findAll();
+    const blogs = await AddBlog.find();
     return res.json(blogs);
   } catch (error) {
     console.log(error);
