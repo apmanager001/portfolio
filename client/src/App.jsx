@@ -1,6 +1,9 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation} from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import Home from "./pages/home";
+import Header from "./personal/pages/comps/header"
+
+import Footer from "./personal/pages/comps/footer";
 import Admin from "./personal/features/adminPage/admin";
 import PersonalHomePage from "./personal/pages/personalHomePage";
 import Portfolio from "./pages/comps/portfolio";
@@ -21,9 +24,12 @@ axios.defaults.baseURL = url || process.env.VITE_API_URL;
 axios.defaults.withCredentials = true;
 
 function App() {
+  const location = useLocation();
+  const noHeaderFooterRoutes = ["/portfolio"];
   return (
     <>
       <Toaster position="top-center" toastOptions={{ duration: 8000 }} />
+      {!noHeaderFooterRoutes.includes(location.pathname) && <Header />}
       <Routes>
         <Route path="/portfolio" element={<Homepage />} />
 
@@ -32,13 +38,14 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/" element={<PersonalHomePage />} />
         <Route path="/me" element={<Me />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+        {/* <Route path="/portfolio" element={<Portfolio />} /> */}
         <Route path="/photography" element={<Photo />} />
         <Route path="//blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
+      {!noHeaderFooterRoutes.includes(location.pathname) && <Footer />}
     </>
   );
 }

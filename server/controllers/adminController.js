@@ -50,9 +50,19 @@ const postAddingBlog = async (req, res) => {
   }
 };
 
+const getBlogs = async (req, res) => {
+  try {
+    const blogs = await AddBlog.findAll();
+    return res.json(blogs);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Failed to retrieve blogs" });
+  }
+};
 
 module.exports = {
     getMessages,
     getCryptoNewsletter,
-    postAddingBlog
+    postAddingBlog,
+    getBlogs
 }

@@ -26,14 +26,14 @@ h3, h2{
 box-shadow: 0 0 3px rgba(98, 128, 218, 0.8),
               0 0 6px rgba(98, 128, 218, 0.6),
               0 0 9px rgba(98, 128, 218, 0.4),
-              0 0 12px rgba(98, 128, 218, 0.2); /* Glow effect */
+              0 0 12px rgba(98, 128, 218, 0.2);
 transition: box-shadow 0.3s ease;
 }
 .glow:hover {
   box-shadow: 0 0 6px rgba(98, 128, 218, 1),
               0 0 12px rgba(98, 128, 218, 0.8),
               0 0 18px rgba(98, 128, 218, 0.6),
-              0 0 24px rgba(98, 128, 218, 0.4); /* Stronger glow on hover */
+              0 0 24px rgba(98, 128, 218, 0.4); 
 }
 
 #name {
@@ -146,15 +146,18 @@ transition: box-shadow 0.3s ease;
 }
 .company {
   text-align: left;
+  font-size: 22px;
   padding-left: 25px;
 }
 .title {
   text-align: left;
+  font-size: 16px;
   padding-left: 50px;
   
 }
 .date {
   text-align: left;
+  font-size: 12px;
   padding-left: 75px;
 }
 

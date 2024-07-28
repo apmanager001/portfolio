@@ -3,7 +3,8 @@ const router = express.Router();
 const {
  getMessages,
  getCryptoNewsletter,
- postAddingBlog
+ postAddingBlog,
+ getBlogs
 } = require("../controllers/adminController");
 const {
   postContactPro,
@@ -25,6 +26,10 @@ router.use(
 router.get("/messages", getMessages);
 router.get('/crypto/newsletter', getCryptoNewsletter)
 router.post('/addBlog', postAddingBlog)
+
+
+//Blog page
+router.get("/getBlogs", getBlogs)
 
 
 //Professional contact post 
