@@ -1,12 +1,9 @@
 import { Route, Routes, useLocation} from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import Home from "./pages/home";
 import Header from "./personal/pages/comps/header"
-
 import Footer from "./personal/pages/comps/footer";
 import Admin from "./personal/features/adminPage/admin";
 import PersonalHomePage from "./personal/pages/personalHomePage";
-import Portfolio from "./pages/comps/portfolio";
 import Photo from "./personal/pages/photo";
 import Me from "./personal/pages/me";
 import Blog from "./personal/features/blog/blog";
@@ -17,6 +14,7 @@ import axios from "axios";
 import "./App.css";
 
 import Homepage from "./portfolio/homepage";
+import IndividualBlog from "./personal/features/blog/individualBlog";
 
 const url = import.meta.env.VITE_API_URL;
 
@@ -38,12 +36,12 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/" element={<PersonalHomePage />} />
         <Route path="/me" element={<Me />} />
-        {/* <Route path="/portfolio" element={<Portfolio />} /> */}
         <Route path="/photography" element={<Photo />} />
         <Route path="//blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/blog/:id" element={<IndividualBlog />} />
       </Routes>
       {!noHeaderFooterRoutes.includes(location.pathname) && <Footer />}
     </>

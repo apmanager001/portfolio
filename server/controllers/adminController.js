@@ -52,7 +52,7 @@ const postAddingBlog = async (req, res) => {
 
 const getBlogs = async (req, res) => {
   try {
-    const blogs = await AddBlog.find();
+    const blogs = await AddBlog.find().sort({ date: -1 }); // -1 for descending order
     return res.json(blogs);
   } catch (error) {
     console.log(error);
@@ -60,9 +60,26 @@ const getBlogs = async (req, res) => {
   }
 };
 
+const getIndividualBlog = async (req, res) => {
+  try {
+    const { id } = req.params; // Extract the id from request parameters
+    const blog = await AddBlog.findById(id); // Find the blog by id
+
+    if (!blog) {
+      return res.status(404).json({ error: "Blog not found" });
+    }
+
+    return res.json(blog); // Return the found blog
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Failed to retrieve blog" });
+  }
+};
+
 module.exports = {
-    getMessages,
-    getCryptoNewsletter,
-    postAddingBlog,
-    getBlogs
-}
+  getMessages,
+  getCryptoNewsletter,
+  postAddingBlog,
+  getBlogs,
+  getIndividualBlog,
+};

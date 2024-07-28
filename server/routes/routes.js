@@ -4,7 +4,8 @@ const {
  getMessages,
  getCryptoNewsletter,
  postAddingBlog,
- getBlogs
+ getBlogs,
+ getIndividualBlog
 } = require("../controllers/adminController");
 const {
   postContactPro,
@@ -12,7 +13,7 @@ const {
 } = require("../controllers/professionalControllers");
 const cors = require("cors");
 
-const url = process.env.SERVER_URL;
+const url = [process.env.SERVER_URL, "http://localhost:5173"];
 
 //middleware
 router.use(
@@ -30,7 +31,7 @@ router.post('/addBlog', postAddingBlog)
 
 //Blog page
 router.get("/getBlogs", getBlogs)
-
+router.get("/blog/:id", getIndividualBlog)
 
 //Professional contact post 
 router.delete('/deleteContact/:deleteId', deleteContact)
