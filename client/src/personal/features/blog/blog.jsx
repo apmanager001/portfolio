@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import styles from "./css/blog.module.css";
 
 const Blog = () => {
@@ -7,16 +8,12 @@ const Blog = () => {
 
   useEffect(() => {
     const fetchBlogs = async () => {
-      try {
-        const response = await fetch("/getBlogs");
-        if (!response.ok) {
-          throw new Error("Failed to fetch blogs");
-        }
-        const data = await response.json();
-        setBlogs(data);
-      } catch (error) {
-        setError(error.message);
-      }
+     try {
+       const response = await axios.get("/getBlogs");
+       setBlogs(response.data);
+     } catch (error) {
+       setError(error.message);
+     }
     };
 
     fetchBlogs();
