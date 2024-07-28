@@ -1,1 +1,1 @@
-web: node ./server/index.js
+web: "cd backend && node index.js"
