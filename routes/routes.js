@@ -4,7 +4,8 @@ const {
  getMessages,
  getCryptoNewsletter,
  postAddingBlog,
- getBlogs
+ getBlogs,
+ getIndividualBlog
 } = require("../controllers/adminController");
 const {
   postContactPro,
@@ -30,7 +31,7 @@ router.post('/addBlog', postAddingBlog)
 
 //Blog page
 router.get("/getBlogs", getBlogs)
-
+router.get("/blog/:id", getIndividualBlog)
 
 //Professional contact post 
 router.delete('/deleteContact/:deleteId', deleteContact)
