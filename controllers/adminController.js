@@ -52,7 +52,7 @@ const postAddingBlog = async (req, res) => {
 
 const getBlogs = async (req, res) => {
   try {
-    const blogs = await AddBlog.find().sort({ date: 'asc' }); // -1 for descending order
+    const blogs = await AddBlog.find().sort({ date: -1 }); // -1 for descending order
     return res.json(blogs);
   } catch (error) {
     console.log(error);
