@@ -6,7 +6,7 @@
     width: 100%;
     background-color: var(--background);
     color: var(--text);
-    border-bottom: 2px solid var(--addBackground);
+    border-bottom: 2px solid var(--background2);
 }
 .header a {
     color: var(--text);
