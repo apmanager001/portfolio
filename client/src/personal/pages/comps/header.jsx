@@ -25,9 +25,10 @@ const Header = () => {
         </Link>
       </div>
       <div className={styles.right}>
+        <DarkMode />
         <div className={styles.remove}>
           <>
-            <DarkMode />
+            
             <Link to="/me">
               <h3 id={styles.link}>Me</h3>
             </Link>
@@ -59,7 +60,6 @@ const Header = () => {
         {isMenuOpen && (
           <div className={styles.dropdownMenu}>
             <>
-              <DarkMode />
               <Link onClick={toggleMenu} to="/me">
                 Me
               </Link>

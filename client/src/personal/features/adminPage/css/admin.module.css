@@ -2,12 +2,13 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin-top: 100px;
     height: 750px;
-    color: black;
-    
+    color: var(--text);
+    background-color: var(--background);
 }
-
+.adminContainer a {
+    color: var(--text);
+}
 .mainContent {
   flex-grow: 1;
   overflow-y: auto; 
@@ -18,9 +19,8 @@
     gap:50px;
     font-size: 24px;
     padding: 10px 0 10px 0;
-    background-color: lightgray;
-    margin: 0 10% 0 10%;
-    color: black;
+    background-color: var(--background2);
+    color: var(--text);
 }
 .icon {
     padding-right: 5px;
@@ -28,7 +28,7 @@
 
 #logout {
     border-radius: 8px;
-    border: .1;
+    border: 0;
     outline: none;
     cursor: pointer;
 }
@@ -36,7 +36,7 @@
 @media only screen and (max-width: 600px) {
 
     .adminContainer {
-        margin-top: 110px;
+        margin:0 ;
     }
 
     .navBar {
@@ -44,8 +44,5 @@
         font-size: 16px;
         gap:10px;
         padding: 10px ;
-        background-color: lightgray;
-        margin: 0;
-        color: black;
     }
 }

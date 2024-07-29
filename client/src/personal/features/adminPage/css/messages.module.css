@@ -22,12 +22,12 @@
     border-radius: 8px;
     width: 500px;
     height: 200px;
-    background-color: beige;
+    background-color: var(--background2);
     margin: 0px auto;
 }
 .email a{
     text-decoration: none;
-    color: black;
+    color: var(--text);
 }
 .relativeContainer {
     padding: 15px;
@@ -37,4 +37,12 @@
     font-weight: 700;
 }
 
+
+@media only screen and (max-width: 600px) {
+
+    .itemContainer {
+        border-radius: 0;
+        width: 100%;
+    }
+}
 

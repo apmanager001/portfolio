@@ -1,7 +1,10 @@
 .darkMode {
-    margin-top: -20px;
+    /* margin-top: -20px; */
     margin-left: 10px;
     font-size: 22px;
+    display: flex;
+    
+    align-items: center;
 }
 img {
     height: 20px;

@@ -5,17 +5,25 @@
     gap: 25px;
     padding: 50px 0 0 0;
     margin: 0 10% 0 10%;
+    color: var(--text);
 }
 .input {
-    padding: 5px;
+    padding: 8px;
     font-size: 26px;
     font-weight: 700;
     width: 500px;
-    background-color: lightblue;
+    background-color: var(--background2);
     border-radius: 8px;
     border: 0;
     outline: none;
+    color: var(--text);
 }
+input::placeholder,
+textarea::placeholder {
+  color: var(--text);
+  font-weight: 300;
+}
+
 textarea {
     height: 200px;
 }
@@ -25,8 +33,12 @@ textarea {
     font-size: 32px;
     font-weight: 700;
     border-radius: 8px;
-    padding: 5px;
+    padding: 8px;
     cursor: pointer;
+    color: var(--text);
+}
+#button:hover {
+  background-color: #15c48e;
 }
 
 @media only screen and (max-width: 600px) {
@@ -36,8 +48,7 @@ textarea {
         margin: 0 ;
     }
     .input {
-        width: 80%;
-        background-color: lightblue;
+        width: 90%;
         border-radius: 8px;
         border: 0;
         outline: none;

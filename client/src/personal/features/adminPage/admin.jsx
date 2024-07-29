@@ -25,9 +25,6 @@ const Admin = () => {
       }
     };
   return (
-    <>
-      <Header />
-
       <div className={styles.adminContainer}>
         <div className={styles.navBar}>
           <a href="#messages" onClick={() => handleLinkClick("messages")}>
@@ -63,8 +60,6 @@ const Admin = () => {
         </div>
       </div>
 
-      <Footer />
-    </>
   );
 }
 
