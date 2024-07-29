@@ -41,7 +41,7 @@ console.log(blog)
         </div>
         <div className={styles.row1}>
             <div className={styles.title}>{blog.title}</div>
-            <div className={styles.category}>{blog.category}</div>
+            
             <div className={styles.message}>{blog.message}</div>
         </div>
         <div className={styles.row}>

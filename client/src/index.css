@@ -9,7 +9,9 @@
 
   color-scheme: light dark;
   --text: #0b130b;
+  --text2: #666;
   --background: #f7f9f6;
+  --background2: #777;
   --primary: #71a86b;
   --secondary: #a5bfca;
   --button: #849ba5;
@@ -21,10 +23,14 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+a {
+  text-decoration: none;
+}
 [data-theme="dark"] {
   --text: #ecf4ec;
+  --text2: #666;
   --background: #070906;
+  --background2: #444;
   --primary: #5d9457;
   --secondary: #354f5a;
   --button: #2a3e48;

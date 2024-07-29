@@ -2,19 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    padding: 75px;
     font-weight: 700;
-    color: black;
+    color: var(--text);
 }
 .blogBox {
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 100vh;
     width: 50%;
-    border: 1px solid black;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
-    margin: 50px;
+    background-color: var(--background2);
+    border-radius: 12px;
     text-align: left;
     position: relative;
 }
@@ -39,18 +39,30 @@
 .title {
     padding: 0 0 50px 30px;
 }
-.category {
-    padding: 0 0 50px 45px;
-}
+
 .date {
     padding-right: 15px;
 }
 .message {
-    padding-left: 60px;
+    padding: 60px 25px 0 60px;
 }
 .tags {
     padding: 15px;
 }
 .resources {
     padding-right: 15px;
+}
+
+
+@media (max-width: 480px) {
+    .blogContainer{
+        padding: 0;
+    }
+    .blogBox {
+        border-radius: 0;
+        width: 100%;
+    }
+    .blogContainer {
+        margin: 0;
+    }
 }

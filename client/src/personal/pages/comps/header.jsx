@@ -1,91 +1,84 @@
-import React, {useEffect} from 'react'
-import styles from '../css/header.module.css'
-import {Link} from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import styles from "../css/header.module.css";
+import DarkMode from '../../../portfolio/darkmode/DarkMode'
+
+
 
 const Header = () => {
   
-  useEffect(() => {
-        
-    const menuIcon = document.getElementById(styles.mobileMenu);
-    const nav = document.querySelector('nav');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+ 
 
-    const handleMenuToggle = () => {
-    
-        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-        menuIcon.classList.toggle(styles.open);
-    };
 
-    menuIcon.addEventListener('click', handleMenuToggle);
-
-    return () => {
-        menuIcon.removeEventListener('click', handleMenuToggle);
-    };
-  }, []);
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className={styles.header}>
-      <div className={`${styles.title} ${styles.mobileNone}`}>
-        <Link to="/">Robert Foley</Link>
-      </div>
-      <div className={`${styles.links} ${styles.mobileNone}`}>
-        <Link to="/me" className={styles.about}>
-          Me
-        </Link>
-        <Link to="/portfolio" className={styles.about}>
-          Portfolio
-        </Link>
-        <Link to="/blog" className={styles.about}>
-          Blog
-        </Link>
-        <Link to="/photography" className={styles.photography}>
-          Photography
-        </Link>
-        <Link to="/contact" className={styles.contact}>
-          Contact
+      <div className={styles.left}>
+        <Link id={styles.link} to="/">
+          <h1>Robert Foley</h1>
         </Link>
       </div>
-      <header className={styles.mobileNav}>
-        <div className={styles.mobileTitle}>
-          <h1>
-            <Link to="/">Robert Foley</Link>
-          </h1>
+      <div className={styles.right}>
+        <div className={styles.remove}>
+          <>
+            <DarkMode />
+            <Link to="/me">
+              <h3 id={styles.link}>Me</h3>
+            </Link>
+            <Link to="/portfolio">
+              <h3 id={styles.link}>Portfolio</h3>
+            </Link>
+            <Link to="/blog">
+              <h3 id={styles.link}>Blog</h3>
+            </Link>
+            <Link to="/photography">
+              <h3 id={styles.link}>Photography</h3>
+            </Link>
+            <Link to="/contact">
+              <h3 id={styles.link}>Contact</h3>
+            </Link>
+          </>
         </div>
-        <div className={styles.mobileMenu}>
-          <span id={styles.mobileMenu}>
-            <div></div>
-            <div></div>
-            <div></div>
-          </span>
+        <div className={styles.search}>
+          <div
+            className={`${styles.hamburgerIcon} ${
+              isMenuOpen ? styles.menuOpen : ""
+            }`}
+            onClick={toggleMenu}
+            aria-expanded={isMenuOpen}
+          >
+            <FontAwesomeIcon icon={faBars} />
+          </div>
         </div>
-      </header>
-
-      <nav className={styles.mobileNav2}>
-        <h2>
-          <Link to="/me" className={styles.about}>
-            Me
-          </Link>
-        </h2>
-        <h2>
-          <Link to="/portfolio" className={styles.about}>
-            Portfolio
-          </Link>
-        </h2>
-        <h2>
-          <Link to="/blog" className={styles.portfolio}>
-            Blog
-          </Link>
-        </h2>
-        <h2>
-          <Link to="/photography" className={styles.photography}>
-            Photography
-          </Link>
-        </h2>
-        <h2>
-          <Link to="/contact" className={styles.contact}>
-            Contact
-          </Link>
-        </h2>
-      </nav>
+        {isMenuOpen && (
+          <div className={styles.dropdownMenu}>
+            <>
+              <DarkMode />
+              <Link onClick={toggleMenu} to="/me">
+                Me
+              </Link>
+              <Link onClick={toggleMenu} to="/portfolio">
+                Portfolio
+              </Link>
+              <Link onClick={toggleMenu} to="/blog">
+                Blog
+              </Link>
+              <Link onClick={toggleMenu} to="/photography">
+                Photography
+              </Link>
+              <Link onClick={toggleMenu} to="/contact">
+                Contact
+              </Link>
+            </>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

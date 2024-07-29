@@ -5,23 +5,32 @@ import styles from "./css/blog.module.css";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
-
+  
   const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchBlogs = async () => {
-     try {
-       const response = await axios.get("/getBlogs");
+      try {
+        const response = await axios.get("/getBlogs");
 
-       const processedBlogs = response.data.map((blog) => ({
-         ...blog,
-         dateWithoutTime: new Date(blog.date).toLocaleDateString(),
-       }));
-   
-       setBlogs(processedBlogs);
-     } catch (error) {
-       setError(error.message);
-     }
+        const processedBlogs = response.data.map((blog) => {
+          const truncateMessage = (message) => {
+            return message.split(" ").length > 20
+              ? `${message.split(" ").slice(0, 20).join(" ")}...`
+              : message;
+          };
+
+          return {
+            ...blog,
+            dateWithoutTime: new Date(blog.date).toLocaleDateString(),
+            truncatedMessage: truncateMessage(blog.message),
+          };
+        });
+
+        setBlogs(processedBlogs);
+      } catch (error) {
+        setError(error.message);
+      }
     };
 
     fetchBlogs();
@@ -47,7 +56,7 @@ const Blog = () => {
                   <h3>{blog.dateWithoutTime}</h3>
                 </div>
 
-                <p class={styles.p}>{blog.message}</p>
+                <p className={styles.p}>{blog.truncatedMessage}</p>
               </div>
             </Link>
           ))}

@@ -1,6 +1,4 @@
 import React from 'react'
-import Header from './comps/header'
-import Footer from './comps/footer'
 import {Link} from 'react-router-dom'
 import styles from './css/photo.module.css'
 
@@ -9,7 +7,6 @@ const Photo = () => {
 
   return (
     <>
-    <Header />
       <div className={styles.photoContainer}>
         <h1 id={styles.photography}><Link to="https://www.instagram.com/foleyautamatic/" target="_blank">My Photography</Link></h1>
           <div class={styles.photo} id="photo">
@@ -51,7 +48,6 @@ const Photo = () => {
 
         </div> 
       </div>
-    <Footer />
     </>
   )
 }
