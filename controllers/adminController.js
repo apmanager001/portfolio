@@ -90,9 +90,9 @@ const getTag = async (req, res) => {
     if (!tag) {
       return res.status(400).json({ error: "Tag is required" });
     }
-
+    const  newId = `#${id}`
     // Find blogs that contain the specified tag
-    const blogs = await AddBlog.find({ tags: id });
+    const blogs = await AddBlog.find({ tags: newId});
 
     if (blogs.length === 0) {
       return res.status(404).json({ message: "No blogs found with this tag" });
