@@ -32,7 +32,6 @@ const IndividualBlog = () => {
       fetchEntry();
     }, [id]);
 
-console.log(blog)
   return (
     <div className={styles.blogContainer}>
       <div className={styles.blogBox}>
@@ -53,7 +52,7 @@ console.log(blog)
                 <Link
                   key={index}
                   className={styles.tagLink}
-                  to={`/tags/${tag}`}
+                  to={`/tags/${tag.replace("#", "")}`}
                 >
                   {tag}
                 </Link>

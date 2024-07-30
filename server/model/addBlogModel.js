@@ -15,7 +15,7 @@ const AddBlog = new Schema({
     type: [String], // This indicates that 'resources' is an array of strings
     validate: {
       validator: function (v) {
-        return v.every((tag) => /^#[a-zA-Z0-9]+$/.test(tag));
+        return v.every((tag) => /^#[a-zA-Z0-9_]+$/.test(tag));
       },
       message: (props) => `${props.value} is not a valid hashtag!`,
     },

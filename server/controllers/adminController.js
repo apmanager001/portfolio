@@ -35,11 +35,17 @@ const postAddingBlog = async (req, res) => {
   try {
     const { title, category, resources, tags, message} = req.body;
    date = new Date()
+
+   const tagsArray = tags
+     .split(",")
+     .map((tag) => tag.trim())
+     .filter((tag) => /^#[a-zA-Z0-9_]+$/.test(tag));
+
     const blog = await AddBlog.create({
       title,
       category,
       resources,
-      tags,
+      tags: tagsArray,
       message,
       author: 'Admin',
       date: date,
@@ -78,14 +84,17 @@ const getIndividualBlog = async (req, res) => {
 
 const getTag = async (req, res) => {
   try {
-    const { tag } = req.query;
+    const { id } = req.params;
 
-    if (!tag) {
+    console.log(id)
+    if (!id) {
       return res.status(400).json({ error: "Tag is required" });
     }
 
+    const newId = id.startsWith("#") ? id : `#${id}`;
+    console.log(newId);
     // Find blogs that contain the specified tag
-    const blogs = await AddBlog.find({ tags: tag });
+    const blogs = await AddBlog.find({ tags: newId});
 
     if (blogs.length === 0) {
       return res.status(404).json({ message: "No blogs found with this tag" });
