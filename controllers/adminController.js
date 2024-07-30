@@ -92,7 +92,8 @@ const getTag = async (req, res) => {
     }
     const  newId = `#${id}`
 
-    console.log(newId)
+    const newId = tag.startsWith("#") ? tag : `#${tag}`;
+    console.log(newId);
     // Find blogs that contain the specified tag
     const blogs = await AddBlog.find({ tags: newId});
 
