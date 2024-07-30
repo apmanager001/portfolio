@@ -35,11 +35,17 @@ const postAddingBlog = async (req, res) => {
   try {
     const { title, category, resources, tags, message} = req.body;
    date = new Date()
+
+   const tagsArray = tags
+     .split(",")
+     .map((tag) => tag.trim())
+     .filter((tag) => /^#[a-zA-Z0-9_]+$/.test(tag));
+
     const blog = await AddBlog.create({
       title,
       category,
       resources,
-      tags,
+      tags: tagsArray,
       message,
       author: 'Admin',
       date: date,
