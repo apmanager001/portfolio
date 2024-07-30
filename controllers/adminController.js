@@ -90,8 +90,10 @@ const getTag = async (req, res) => {
       return res.status(400).json({ error: "Tag is required" });
     }
 
+    const decodedTag = decodeURIComponent(tag);
+
     // Find blogs that contain the specified tag
-    const blogs = await AddBlog.find({ tags: tag });
+    const blogs = await AddBlog.find({ tags: decodedTag });
 
     if (blogs.length === 0) {
       return res.status(404).json({ message: "No blogs found with this tag" });
