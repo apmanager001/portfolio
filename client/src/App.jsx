@@ -11,6 +11,7 @@ import Contact from "./personal/features/contact/contact";
 import Login from "./personal/features/login/login";
 import Register from "./personal/features/login/register";
 import axios from "axios";
+import Tags from "./personal/features/blog/tags";
 import "./App.css";
 
 import Homepage from "./portfolio/homepage";
@@ -42,6 +43,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/blog/:id" element={<IndividualBlog />} />
+        <Route path="/tags/:id" element={<Tags />} />
       </Routes>
       {!noHeaderFooterRoutes.includes(location.pathname) && <Footer />}
     </>

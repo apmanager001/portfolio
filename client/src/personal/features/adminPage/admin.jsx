@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import styles from './css/admin.module.css'
-import Header from '../../pages/comps/header'
-import Footer from '../../pages/comps/footer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMessage, faBlog, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import Messages from './comps/messages';

@@ -12,7 +12,13 @@ const AddBlog = new Schema({
     type: String,
   },
   tags: {
-    type: String,
+    type: [String], // This indicates that 'resources' is an array of strings
+    validate: {
+      validator: function (v) {
+        return v.every((tag) => /^#[a-zA-Z0-9]+$/.test(tag));
+      },
+      message: (props) => `${props.value} is not a valid hashtag!`,
+    },
   },
   message: {
     type: String,
@@ -22,7 +28,7 @@ const AddBlog = new Schema({
   },
   date: {
     type: Date,
-  }
+  },
 });
 
 const addBlog = mongoose.model("addBlog", AddBlog);
