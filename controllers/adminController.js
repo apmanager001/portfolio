@@ -84,16 +84,15 @@ const getIndividualBlog = async (req, res) => {
 
 const getTag = async (req, res) => {
   try {
+    const { id } = req.params;
     const { tag } = req.query;
 
     if (!tag) {
       return res.status(400).json({ error: "Tag is required" });
     }
 
-    const decodedTag = decodeURIComponent(tag);
-
     // Find blogs that contain the specified tag
-    const blogs = await AddBlog.find({ tags: decodedTag });
+    const blogs = await AddBlog.find({ tags: id });
 
     if (blogs.length === 0) {
       return res.status(404).json({ message: "No blogs found with this tag" });
