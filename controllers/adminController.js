@@ -90,7 +90,6 @@ const getTag = async (req, res) => {
     if (!tag) {
       return res.status(400).json({ error: "Tag is required" });
     }
-    const  newId = `#${id}`
 
     const newId = tag.startsWith("#") ? tag : `#${tag}`;
     console.log(newId);
