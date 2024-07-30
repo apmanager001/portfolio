@@ -76,10 +76,35 @@ const getIndividualBlog = async (req, res) => {
   }
 };
 
+const getTag = async (req, res) => {
+  try {
+    const { tag } = req.query;
+
+    if (!tag) {
+      return res.status(400).json({ error: "Tag is required" });
+    }
+
+    // Find blogs that contain the specified tag
+    const blogs = await AddBlog.find({ tags: tag });
+
+    if (blogs.length === 0) {
+      return res.status(404).json({ message: "No blogs found with this tag" });
+    }
+
+    return res.json(blogs);
+  } catch (error) {
+    console.error(error);
+    return res
+      .status(500)
+      .json({ error: "An error occurred while searching for the tag" });
+  }
+};
+
 module.exports = {
   getMessages,
   getCryptoNewsletter,
   postAddingBlog,
   getBlogs,
   getIndividualBlog,
+  getTag
 };
