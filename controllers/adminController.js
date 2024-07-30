@@ -85,13 +85,13 @@ const getIndividualBlog = async (req, res) => {
 const getTag = async (req, res) => {
   try {
     const { id } = req.params;
-    const { tag } = req.query;
+
     console.log(id)
-    if (!tag) {
+    if (!id) {
       return res.status(400).json({ error: "Tag is required" });
     }
 
-    const newId = tag.startsWith("#") ? tag : `#${tag}`;
+    const newId = id.startsWith("#") ? id : `#${id}`;
     console.log(newId);
     // Find blogs that contain the specified tag
     const blogs = await AddBlog.find({ tags: newId});
