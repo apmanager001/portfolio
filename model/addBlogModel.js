@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const AddBlog = new Schema({
+  mainFile: {
+    type: String,
+    required: [true, "Please provide a photo"],
+  },
   title: {
     type: String,
   },
