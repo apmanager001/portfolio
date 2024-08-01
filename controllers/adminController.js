@@ -1,6 +1,7 @@
 const Contact = require('../model/contactModel')
 const Newsletter = require("../model/newsletterModel");
 const AddBlog = require('../model/addBlogModel.js')
+const { uploadToS3, deleteFromS3 } = require("../helpers/uploadImage.js");
 
 const getMessages = async (req, res) => {
   try {
@@ -60,8 +61,7 @@ const postAddingBlog = async (req, res) => {
       tags: tagsArray,
       message,
       author: "Admin",
-      date: date,
-      file,
+      date: date
     });
     return res.json(blog);
   } catch (error) {
