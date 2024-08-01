@@ -57,7 +57,6 @@ const AddBlog = () => {
         // Optionally, you can perform any additional actions upon successful submission
       })
       .catch((error) => {
-        console.log(formData.file);
         toast.error("Error adding blog:", error);
         // Optionally, you can handle errors or display error messages to the user
       });

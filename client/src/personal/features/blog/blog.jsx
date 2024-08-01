@@ -35,10 +35,15 @@ const Blog = () => {
 
     fetchBlogs();
   }, []);
-
+console.log(blogs)
    if (error) {
      return <div>Error: {error}</div>;
    }
+
+   const handleImageError = (e) => {
+     e.target.src = "";
+   };
+   
   return (
     <>
       <div className={styles.blogPage}>
@@ -52,6 +57,16 @@ const Blog = () => {
             >
               <div className={styles.box}>
                 <div className={styles.row}>
+                  {blog.mainFile ? (
+                    <img
+                      src={blog.mainFile}
+                      className={styles.image}
+                      alt="Blog Image"
+                      onError={handleImageError}
+                    />
+                  ) : (
+                    ""
+                  )}
                   <h2>{blog.title}</h2>
                   <h3>{blog.dateWithoutTime}</h3>
                 </div>
