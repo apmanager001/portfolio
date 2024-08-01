@@ -34,28 +34,29 @@ const getCryptoNewsletter = async (req, res) => {
 
 const postAddingBlog = async (req, res) => {
   try {
-    const { title, category, resources, tags, message} = req.body;
-   const date = new Date()
+    const { title, category, resources, tags, message } = req.body;
+    const date = new Date();
 
+    // Assuming multer stores files in req.files with the correct names
+    const fileData = req.files["file"][0];
+    const otherFiles = req.files["otherFiles"];
 
-  const fileData = req.files["file"][0];
-  const otherFiles = req.files["otherFiles"];
+    // Upload main file
+    const url = await uploadToS3(fileData);
 
-  const url = await uploadToS3(fileData);
-
-  // Upload additional files
-  const uploadedFiles = [];
-  if (otherFiles && Array.isArray(otherFiles)) {
-    for (const file of otherFiles) {
-      const fileUrl = await uploadToS3(file);
-      uploadedFiles.push(fileUrl);
+    // Upload additional files
+    const uploadedFiles = [];
+    if (otherFiles && Array.isArray(otherFiles)) {
+      for (const file of otherFiles) {
+        const fileUrl = await uploadToS3(file);
+        uploadedFiles.push(fileUrl);
+      }
     }
-  }
 
-   const tagsArray = tags
-     .split(",")
-     .map((tag) => tag.trim())
-     .filter((tag) => /^#[a-zA-Z0-9_]+$/.test(tag));
+    const tagsArray = tags
+      .split(",")
+      .map((tag) => tag.trim())
+      .filter((tag) => /^#[a-zA-Z0-9_]+$/.test(tag));
 
     const blog = await AddBlog.create({
       mainFile: url,
@@ -64,12 +65,15 @@ const postAddingBlog = async (req, res) => {
       resources,
       tags: tagsArray,
       message,
+      otherFiles: uploadedFiles,
       author: "Admin",
-      date: date
+      date: date,
     });
+
     return res.json(blog);
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    return res.status(500).json({ error: "Error adding blog" });
   }
 };
 

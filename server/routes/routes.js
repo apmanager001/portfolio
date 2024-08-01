@@ -25,6 +25,8 @@ router.use(
   })
 );
 
+
+
 //multer 
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
@@ -33,7 +35,14 @@ upload.single("image");
 //Admin post routers
 router.get("/messages", getMessages);
 router.get('/crypto/newsletter', getCryptoNewsletter)
-router.post('/addBlog', postAddingBlog)
+router.post(
+  "/addBlog",
+  upload.fields([
+    { name: "file", maxCount: 1 },
+    { name: "others", maxCount: 15 },
+  ]),
+  postAddingBlog
+);
 
 
 //Blog page

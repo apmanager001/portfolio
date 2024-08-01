@@ -1,71 +1,67 @@
-import React, {useState, useRef} from 'react'
-import styles from '../css/addBlog.module.css'
-import axios from 'axios'
-import {toast} from 'react-hot-toast'
+import React, { useState, useRef } from "react";
+import styles from "../css/addBlog.module.css";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 
 const AddBlog = () => {
-   const fileInputRef = useRef(null);
-   const [formData, setFormData] = useState({
-     title: "",
-     category: "crypto", // Default category
-     resources: "",
-     tags: "",
-     message: "",
-   });
+  const fileInputRef = useRef(null);
+  const [formData, setFormData] = useState({
+    title: "",
+    category: "crypto", // Default category
+    resources: "",
+    tags: "",
+    message: "",
+  });
 
-   const [file, setFile] = useState(null);
-   const [otherFiles, setOtherFiles] = useState([]);
+  const [file, setFile] = useState(null);
+  const [otherFiles, setOtherFiles] = useState([]);
 
-   const handleChange = (e) => {
-     setFormData({ ...formData, [e.target.name]: e.target.value });
-   };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-   const handleFileChange = (e) => {
-     if (e.target.name === "file") {
-       setFile(e.target.files[0]);
-     } else if (e.target.name === "otherFiles") {
-       setOtherFiles(e.target.files);
-     }
-   };
+  const handleFileChange = (e) => {
+    if (e.target.name === "file") {
+      setFile(e.target.files[0]);
+    } else if (e.target.name === "otherFiles") {
+      setOtherFiles(e.target.files);
+    }
+  };
 
-   const handleSubmit = (e) => {
-     e.preventDefault(); // Prevent default form submission behavior
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
 
+    const formDataObj = new FormData();
+    formDataObj.append("title", formData.title);
+    formDataObj.append("category", formData.category);
+    formDataObj.append("resources", formData.resources);
+    formDataObj.append("tags", formData.tags);
+    formDataObj.append("message", formData.message);
 
-     const formDataObj = new FormData();
-     formDataObj.append("title", formData.title);
-     formDataObj.append("category", formData.category);
-     formDataObj.append("resources", formData.resources);
-     formDataObj.append("tags", formData.tags);
-     formDataObj.append("message", formData.message);
+    if (file) {
+      formDataObj.append("file", file);
+    }
 
+    for (let i = 0; i < otherFiles.length; i++) {
+      formDataObj.append("otherFiles", otherFiles[i]);
+    }
 
-     if (file) {
-       formDataObj.append("file", file);
-     }
-
-     for (let i = 0; i < otherFiles.length; i++) {
-       formDataObj.append("otherFiles", otherFiles[i]);
-     }
-
-     axios
-       .post("/addBlog", formDataObj, {
-         headers: {
-           "Content-Type": "multipart/form-data",
-         },
-       })
-       .then((response) => {
-         toast.success("Blog added successfully:");
-         // Optionally, you can perform any additional actions upon successful submission
-       })
-       .catch((error) => {
-         console.log(formData.file);
-         toast.error("Error adding blog:", error);
-         // Optionally, you can handle errors or display error messages to the user
-       });
-   };
-
-
+    axios
+      .post("/addBlog", formDataObj, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        toast.success("Blog added successfully:");
+        // Optionally, you can perform any additional actions upon successful submission
+      })
+      .catch((error) => {
+        console.log(formData.file);
+        toast.error("Error adding blog:", error);
+        // Optionally, you can handle errors or display error messages to the user
+      });
+  };
 
   return (
     <>
@@ -77,7 +73,7 @@ const AddBlog = () => {
             name="title"
             placeholder="Title"
             onChange={handleChange}
-            require
+            required
           />
           <input
             type="file"
@@ -86,6 +82,7 @@ const AddBlog = () => {
             accept="image/*"
             onChange={handleFileChange}
             ref={fileInputRef}
+            required
           />
           <select
             className={styles.input}
@@ -102,7 +99,7 @@ const AddBlog = () => {
             name="resources"
             placeholder="Resources"
             onChange={handleChange}
-            require
+            required
           />
           <input
             className={styles.input}
@@ -110,21 +107,20 @@ const AddBlog = () => {
             name="tags"
             placeholder="Tags"
             onChange={handleChange}
-            require
+            required
           />
           <textarea
             className={styles.input}
-            type="text"
             name="message"
             placeholder="Message"
             onChange={handleChange}
-            require
+            required
           />
-          <input type="submit" id={styles.button} value="Submit" require />
+          <input type="submit" id={styles.button} value="Submit" required />
         </form>
       </div>
     </>
   );
-}
+};
 
-export default AddBlog
+export default AddBlog;
