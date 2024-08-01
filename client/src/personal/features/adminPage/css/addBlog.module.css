@@ -23,7 +23,9 @@ textarea::placeholder {
   color: var(--text);
   font-weight: 300;
 }
-
+#image {
+    font-size: 22px;
+}
 textarea {
     height: 200px;
 }
@@ -52,5 +54,8 @@ textarea {
         border-radius: 8px;
         border: 0;
         outline: none;
+    }
+    #image {
+        width: 95%;
     }
 }

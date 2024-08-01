@@ -35,6 +35,17 @@ const postAddingBlog = async (req, res) => {
   try {
     const { title, category, resources, tags, message} = req.body;
    date = new Date()
+  const fileData = req.files.file[0];
+
+  const url = await uploadToS3(fileData, "auctionImages");
+
+  const uploadedFiles = [];
+  if (otherData && Array.isArray(otherData)) {
+    for (const file of otherData) {
+      const url = await uploadToS3(file, "auctionImages");
+      uploadedFiles.push(url);
+    }
+  }
 
    const tagsArray = tags
      .split(",")
@@ -42,13 +53,15 @@ const postAddingBlog = async (req, res) => {
      .filter((tag) => /^#[a-zA-Z0-9_]+$/.test(tag));
 
     const blog = await AddBlog.create({
+      mainFile: url,
       title,
       category,
       resources,
       tags: tagsArray,
       message,
-      author: 'Admin',
+      author: "Admin",
       date: date,
+      file,
     });
     return res.json(blog);
   } catch (error) {
@@ -85,14 +98,10 @@ const getIndividualBlog = async (req, res) => {
 const getTag = async (req, res) => {
   try {
     const { id } = req.params;
-
-    console.log(id)
     if (!id) {
       return res.status(400).json({ error: "Tag is required" });
     }
-
     const newId = id.startsWith("#") ? id : `#${id}`;
-    console.log(newId);
     // Find blogs that contain the specified tag
     const blogs = await AddBlog.find({ tags: newId});
 

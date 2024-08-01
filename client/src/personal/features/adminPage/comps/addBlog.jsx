@@ -1,15 +1,17 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import styles from '../css/addBlog.module.css'
 import axios from 'axios'
 import {toast} from 'react-hot-toast'
 
 const AddBlog = () => {
+  const fileInputRef = useRef(null);
    const [formData, setFormData] = useState({
      title: "",
      category: "crypto", // Default category
      resources: "",
      tags: "",
      message: "",
+     file: "",
    });
 
    const handleChange = (e) => {
@@ -45,6 +47,15 @@ const AddBlog = () => {
             placeholder="Title"
             onChange={handleChange}
             require
+          />
+          <input
+            type="file"
+            id={styles.image}
+            name="files"
+            accept="image/*"
+            onChange={handleChange}
+            ref={fileInputRef}
+            required
           />
           <select
             className={styles.input}
