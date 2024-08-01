@@ -4,31 +4,62 @@ import axios from 'axios'
 import {toast} from 'react-hot-toast'
 
 const AddBlog = () => {
-  const fileInputRef = useRef(null);
+   const fileInputRef = useRef(null);
    const [formData, setFormData] = useState({
      title: "",
      category: "crypto", // Default category
      resources: "",
      tags: "",
      message: "",
-     file: "",
    });
+
+   const [file, setFile] = useState(null);
+   const [otherFiles, setOtherFiles] = useState([]);
 
    const handleChange = (e) => {
      setFormData({ ...formData, [e.target.name]: e.target.value });
    };
 
+   const handleFileChange = (e) => {
+     if (e.target.name === "file") {
+       setFile(e.target.files[0]);
+     } else if (e.target.name === "otherFiles") {
+       setOtherFiles(e.target.files);
+     }
+   };
+   
    const handleSubmit = (e) => {
      e.preventDefault(); // Prevent default form submission behavior
 
-     // Send form data to backend API using Axios
+
+     const formDataObj = new FormData();
+     formDataObj.append("title", formData.title);
+     formDataObj.append("category", formData.category);
+     formDataObj.append("resources", formData.resources);
+     formDataObj.append("tags", formData.tags);
+     formDataObj.append("message", formData.message);
+
+
+     if (file) {
+       formDataObj.append("file", file);
+     }
+
+     for (let i = 0; i < otherFiles.length; i++) {
+       formDataObj.append("otherFiles", otherFiles[i]);
+     }
+
      axios
-       .post("/addBlog", formData)
+       .post("/addBlog", formDataObj, {
+         headers: {
+           "Content-Type": "multipart/form-data",
+         },
+       })
        .then((response) => {
          toast.success("Blog added successfully:");
          // Optionally, you can perform any additional actions upon successful submission
        })
        .catch((error) => {
+         console.log(formData.file);
          toast.error("Error adding blog:", error);
          // Optionally, you can handle errors or display error messages to the user
        });
@@ -53,9 +84,8 @@ const AddBlog = () => {
             id={styles.image}
             name="files"
             accept="image/*"
-            onChange={handleChange}
+            onChange={handleFileChange}
             ref={fileInputRef}
-            required
           />
           <select
             className={styles.input}
