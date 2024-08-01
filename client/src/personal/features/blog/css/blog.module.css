@@ -16,10 +16,27 @@
 }
 .row {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    
     color: var(--text);
+}
+.column1 {
+  flex: 1; /* Adjusts the size of column1 */
+  display: flex;
+  justify-content: center;
+}
+
+.column2 {
+  flex: 2; /* Adjusts the size of column2 */
+  text-align: left;
+  padding-left: 15px; /* Aligns content to the right */
+}
+
+.column3 {
+  flex: 1; /* Adjusts the size of column3 */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
 }
 .link {
     display: block;
@@ -28,8 +45,8 @@
     
 }
 .image {
-    height: 75px;
-    width: 75px;
+    height: 125px;
+    width: 125px;
 }
 .box {
     text-align: left;

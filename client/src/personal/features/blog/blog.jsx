@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {Link} from 'react-router-dom'
 import axios from "axios";
+import profile from '/profile.jpg'
 import styles from "./css/blog.module.css";
 
 const Blog = () => {
@@ -35,19 +36,20 @@ const Blog = () => {
 
     fetchBlogs();
   }, []);
-console.log(blogs)
+
    if (error) {
      return <div>Error: {error}</div>;
    }
 
    const handleImageError = (e) => {
-     e.target.src = "";
+     e.target.src = profile;
    };
    
   return (
     <>
       <div className={styles.blogPage}>
         <div className={styles.blogContainer}>
+          
           <h1>Blog Posts</h1>
           {blogs.map((blog) => (
             <Link
@@ -57,21 +59,27 @@ console.log(blogs)
             >
               <div className={styles.box}>
                 <div className={styles.row}>
-                  {blog.mainFile ? (
-                    <img
-                      src={blog.mainFile}
-                      className={styles.image}
-                      alt="Blog Image"
-                      onError={handleImageError}
-                    />
-                  ) : (
-                    ""
-                  )}
+                  <div className={styles.column1}>
+                    {blog.mainFile ? (
+                      <img
+                        src={blog.mainFile}
+                        className={styles.image}
+                        alt="Blog Image"
+                        onError={handleImageError}
+                      />
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                  <div className={styles.column2}>
                   <h2>{blog.title}</h2>
+                  
+                <p className={styles.p}>{blog.truncatedMessage}</p>
+                </div>
+                <div className={styles.column3}>
                   <h3>{blog.dateWithoutTime}</h3>
                 </div>
-
-                <p className={styles.p}>{blog.truncatedMessage}</p>
+                </div>
               </div>
             </Link>
           ))}
