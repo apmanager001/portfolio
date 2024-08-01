@@ -27,7 +27,7 @@ const AddBlog = () => {
        setOtherFiles(e.target.files);
      }
    };
-   
+
    const handleSubmit = (e) => {
      e.preventDefault(); // Prevent default form submission behavior
 
@@ -82,7 +82,7 @@ const AddBlog = () => {
           <input
             type="file"
             id={styles.image}
-            name="files"
+            name="file"
             accept="image/*"
             onChange={handleFileChange}
             ref={fileInputRef}

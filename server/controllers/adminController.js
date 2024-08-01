@@ -35,16 +35,20 @@ const getCryptoNewsletter = async (req, res) => {
 const postAddingBlog = async (req, res) => {
   try {
     const { title, category, resources, tags, message} = req.body;
-   date = new Date()
-  const fileData = req.files.file[0];
+   const date = new Date()
 
-  const url = await uploadToS3(fileData, "auctionImages");
 
+  const fileData = req.files["file"][0];
+  const otherFiles = req.files["otherFiles"];
+
+  const url = await uploadToS3(fileData);
+
+  // Upload additional files
   const uploadedFiles = [];
-  if (otherData && Array.isArray(otherData)) {
-    for (const file of otherData) {
-      const url = await uploadToS3(file, "auctionImages");
-      uploadedFiles.push(url);
+  if (otherFiles && Array.isArray(otherFiles)) {
+    for (const file of otherFiles) {
+      const fileUrl = await uploadToS3(file);
+      uploadedFiles.push(fileUrl);
     }
   }
 
