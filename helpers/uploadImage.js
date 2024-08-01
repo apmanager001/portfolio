@@ -45,7 +45,7 @@ const uploadToS3 = async (fileData) => {
 
   try {
     await s3.send(command);
-    const url = `https://auctionimages.s3.us-east-1.amazonaws.com/${randomImageName}`;
+    const url = `https://profileimage100.s3.us-east-1.amazonaws.com/${randomImageName}`;
     return url;
   } catch (err) {
     throw err;
