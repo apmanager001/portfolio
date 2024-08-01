@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const multer = require("multer");
 const {
  getMessages,
  getCryptoNewsletter,
@@ -23,6 +24,11 @@ router.use(
     origin: url,
   })
 );
+
+//multer 
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+upload.single("image");
 
 //Admin post routers
 router.get("/messages", getMessages);
