@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import styles from './css/individualBlog.module.css'
 import axios from 'axios'
+import profile from "/profile.jpg";
 import { useParams } from 'react-router-dom'
 
 const IndividualBlog = () => {
@@ -20,6 +21,7 @@ const IndividualBlog = () => {
             message,
             author,
             date,
+            mainFile,
           } = response.data;
 
           setBlog(response.data);
@@ -31,14 +33,29 @@ const IndividualBlog = () => {
       };
       fetchEntry();
     }, [id]);
-
+const handleImageError = (e) => {
+  e.target.src = profile;
+};
   return (
     <div className={styles.blogContainer}>
       <div className={styles.blogBox}>
         <div className={styles.row}>
           <div className={styles.date}>{date}</div>
         </div>
+
         <div className={styles.row1}>
+          <div className={styles.image}>
+          {blog.mainFile ? (
+            <img
+              src={blog.mainFile}
+              className={styles.image}
+              alt="Blog Image"
+              onError={handleImageError}
+            />
+          ) : (
+            ""
+          )}
+          </div>
           <div className={styles.title}>{blog.title}</div>
 
           <div className={styles.message}>{blog.message}</div>

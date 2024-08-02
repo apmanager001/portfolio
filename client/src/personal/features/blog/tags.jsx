@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams} from "react-router-dom";
 import axios from "axios";
+import profile from "/profile.jpg";
 import styles from "./css/blog.module.css";
 
 const Tags = () => {
@@ -33,6 +34,10 @@ const Tags = () => {
 
       fetchBlogs();
     }, [id]);
+
+    const handleImageError = (e) => {
+      e.target.src = profile;
+    };
   return (
     <div className={styles.blogPage}>
       <div className={styles.blogContainer}>
@@ -42,10 +47,28 @@ const Tags = () => {
           <Link to={`/blog/${blog._id}`} className={styles.link} key={blog.id}>
             <div className={styles.box}>
               <div className={styles.row}>
-                <h2>{blog.title}</h2>
-                <h3>{blog.dateWithoutTime}</h3>
+                <div className={styles.column1}>
+                  {blog.mainFile ? (
+                    <img
+                      src={blog.mainFile}
+                      className={styles.image}
+                      alt="Blog Image"
+                      onError={handleImageError}
+                    />
+                  ) : (
+                    ""
+                  )}
+                </div>
+
+                <div className={styles.column2}>
+                  <h2>{blog.title}</h2>
+
+                  <p className={styles.p}>{blog.truncatedMessage}</p>
+                </div>
+                <div className={styles.column3}>
+                  <p>{blog.dateWithoutTime}</p>
+                </div>
               </div>
-              <p className={styles.p}>{blog.truncatedMessage}</p>
             </div>
           </Link>
         ))}

@@ -74,4 +74,29 @@ h3 {
     .box {
         border-radius: 0px;
     }
+    .row {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        grid-template-rows: 0.75fr 0.25fr;
+        gap: 0px;
+    }
+    .column1 {
+        grid-row: 1 / span 2; /* Span both rows */
+        grid-column: 1;
+        display: flex;
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Align items to the center */
+    }
+    .column2 {
+        grid-row: 1;
+        grid-column: 2;
+        text-align: left; /* Align the text to the left */
+    }
+    .column3 {
+        grid-row: 2;
+        grid-column: 2;
+        text-align: left;
+        margin: 0;
+        font-size: 12px;
+    }
 }

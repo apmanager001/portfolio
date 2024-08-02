@@ -63,18 +63,34 @@ const Homepage = () => {
         </div>
       </div>
       <div className={`${styles.projects} ${styles.glow}`}>
-        <h3>My Projects</h3>
+        <h3>
+          Products and Frameworks<br></br> I have used
+        </h3>
 
         <div className={`${styles.projectDiv} ${styles.glow}`}>
-          <Link href="/">Paint</Link>
+          <a
+            target="new_window"
+            href="https://aws.amazon.com/s3/"
+            rel="noopener noreferrer"
+          >
+            Amazon S3
+          </a>
         </div>
 
         <div className={`${styles.projectDiv} ${styles.glow}`}>
-          <a href="/">Habits</a>
+          <a href="/" rel="noopener noreferrer">
+            React
+          </a>
         </div>
 
         <div className={`${styles.projectDiv} ${styles.glow}`}>
-          <a href="/">Movie Chat</a>
+          <a
+            href="https://heroku.com"
+            target="new_window"
+            rel="noopener noreferrer"
+          >
+            Heroku
+          </a>
         </div>
 
         <div className={`${styles.projectDiv} ${styles.glow}`}>
@@ -93,9 +109,6 @@ const Homepage = () => {
         </div>
         <div className={`${styles.techDiv} ${styles.glow}`}>
           <div className={styles.techImage}></div>CSS
-        </div>
-        <div className={`${styles.techDiv} ${styles.glow}`}>
-          <div className={styles.techImage}></div>REACT
         </div>
         <div className={`${styles.techDiv} ${styles.glow}`}>
           <div className={styles.techImage}></div>EXPRESS

@@ -71,14 +71,16 @@ const Blog = () => {
                       ""
                     )}
                   </div>
+                  
                   <div className={styles.column2}>
                   <h2>{blog.title}</h2>
                   
                 <p className={styles.p}>{blog.truncatedMessage}</p>
                 </div>
                 <div className={styles.column3}>
-                  <h3>{blog.dateWithoutTime}</h3>
+                  <p>{blog.dateWithoutTime}</p>
                 </div>
+                
                 </div>
               </div>
             </Link>
