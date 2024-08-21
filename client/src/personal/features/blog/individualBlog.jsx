@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom'
 const IndividualBlog = () => {
     const {id} = useParams()
     const [blog, setBlog] = useState({})
+    const [message, setMessage] = useState('');
     const [date, setDate] = useState([]);
     useEffect(() => {
       const fetchEntry = async () => {
@@ -25,6 +26,7 @@ const IndividualBlog = () => {
           } = response.data;
 
           setBlog(response.data);
+          setMessage(response.data.message)
           const dateWithoutTime = new Date(response.data.date).toLocaleDateString();
           setDate(dateWithoutTime)
         } catch (error) {
@@ -38,10 +40,10 @@ const handleImageError = (e) => {
 };
 
 
-const paragraphs = blog.message
+const paragraphs = message
   .split("\n")
   .map((paragraph, index) => <p key={index}>{paragraph}</p>);
-
+  
   return (
     <div className={styles.blogContainer}>
       <div className={styles.blogBox}>
