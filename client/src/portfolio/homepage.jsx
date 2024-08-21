@@ -94,7 +94,7 @@ const Homepage = () => {
         </div>
 
         <div className={`${styles.projectDiv} ${styles.glow}`}>
-          <a href="https://newadventures100.netlify.app">New Adventure</a>
+          <a href="https://tailwindcss.com/">Tailwind CSS</a>
         </div>
 
         <div className={`${styles.projectDiv} ${styles.glow}`}>

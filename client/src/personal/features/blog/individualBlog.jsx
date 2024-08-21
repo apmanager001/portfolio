@@ -36,6 +36,12 @@ const IndividualBlog = () => {
 const handleImageError = (e) => {
   e.target.src = profile;
 };
+
+
+const paragraphs = blog.message
+  .split("\n")
+  .map((paragraph, index) => <p key={index}>{paragraph}</p>);
+
   return (
     <div className={styles.blogContainer}>
       <div className={styles.blogBox}>
@@ -58,7 +64,7 @@ const handleImageError = (e) => {
           </div>
           <div className={styles.title}>{blog.title}</div>
 
-          <div className={styles.message}>{blog.message}</div>
+          <div className={styles.message}>{paragraphs}</div>
           <br></br>
           <div className={styles.author}>Bob Foley</div>
         </div>
