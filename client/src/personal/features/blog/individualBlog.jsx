@@ -47,9 +47,7 @@ const paragraphs = message
   return (
     <div className={styles.blogContainer}>
       <div className={styles.blogBox}>
-        <div className={styles.row}>
-          <div className={styles.date}>{date}</div>
-        </div>
+        
 
         <div className={styles.row1}>
           <div className={styles.image}>
@@ -63,6 +61,9 @@ const paragraphs = message
           ) : (
             ""
           )}
+          </div>
+          <div className={styles.row}>
+          <div className={styles.date}>{date}</div>
           </div>
           <div className={styles.title}>{blog.title}</div>
 
