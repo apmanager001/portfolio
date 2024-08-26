@@ -11,14 +11,20 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import ImageCarousel from "./carousel";
 import DarkMode from "./darkmode/DarkMode";
-import image1 from "/mytripmaps.jpg"
-import image2 from "/newadv.jpg"
+import image1 from "/tripmap.jpg"
+import image2 from "/adventure.jpg"
 import image3 from "/lmtreasure.jpg";
 import image4 from "/habiting.jpg";
 
 const Homepage = () => {
 
   const images = [image1, image2, image3, image4];
+  const url = [
+    "https://mytripmaps200.netlify.app",
+    "https://newadventures100.netlify.app/",
+    "https://lmtreasuretrove.com/",
+    "https://habiting.netlify.app/",
+  ];
 
 
 
@@ -129,7 +135,7 @@ const Homepage = () => {
       <div className={`${styles.workExperience} ${styles.glow}`}>
         <h3>Completed Projects</h3>
         <div className={styles.completeProjects}>
-          <ImageCarousel images={images} title="Project Carousel" />
+          <ImageCarousel images={images} url={url} title="Project Carousel" />
         </div>
       </div>
       <div className={`${styles.resume} ${styles.glow}`}>
