@@ -38,7 +38,7 @@ function App() {
         <Route path="/" element={<PersonalHomePage />} />
         <Route path="/me" element={<Me />} />
         <Route path="/photography" element={<Photo />} />
-        <Route path="//blog" element={<Blog />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

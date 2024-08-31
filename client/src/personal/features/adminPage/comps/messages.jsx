@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import styles from '../css/messages.module.css'
+
 import DeleteMessage from './deleteMessage'
 import { Link } from 'react-router-dom';
 import {toast} from 'react-hot-toast'
@@ -38,21 +38,23 @@ const generateItemContainers = () => {
     
 
     return (
-      <div className={styles.itemContainer}>
-        <div className={styles.relativeContainer}>
-          <div className={styles.itemFrom}>{message.location}</div>
-          <div className={styles.delete}>
+      <div className="card bg-slate-500 text-primary-content w-96 h-96" key={index}>
+        <div className='p-3 h-full text-left text-gray-800'>
+          <div className='text-xl'>{message.location}</div>
+          
+
+          <div className='text-lg'>{message.name}</div>
+          <div className='text-lg text-gray-800 hover:text-black'>
+            <Link href={`mailto:${message.email}`}>{message.email}</Link>
+          </div>
+          <div className='pl-2'>{message.message}</div>
+          <div className="card-actions justify-end ">
             <DeleteMessage
               deleteId={message._id}
               onDeleteMessage={toggleDeleteMessage}
             />
           </div>
-          
-          <div className={styles.name}>{message.name}</div>
-          <div className={styles.email}>
-            <a href={`mailto:${message.email}`}>{message.email}</a>
-          </div>
-          <div className={styles.message}>{message.message}</div>
+
         </div>
       </div>
     );
@@ -66,10 +68,10 @@ const generateItemContainers = () => {
 
   return (
     <>
-      <div className={styles.messagesContainer}>
+      <div className='pt-8'>
         <h1>Messages</h1>
 
-        <div className={styles.gridContainer}>{generateItemContainers()}</div>
+        <div className='flex justify-center flex-wrap gap-2'>{generateItemContainers()}</div>
       </div>
     </>
   );

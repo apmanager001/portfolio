@@ -1,7 +1,5 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "../../pages/comps/header";
-import Footer from "../../pages/comps/footer";
 import styles from "./css/login.module.css";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -44,8 +42,7 @@ const Login = () => {
     }
   };
   return (
-    <>
-      <Header />
+
       <div className={styles.loginContainer}>
         
         <form onSubmit={loginUser}>
@@ -72,8 +69,7 @@ const Login = () => {
 
       </div>
 
-      <Footer />
-    </>
+ 
   );
 };
 

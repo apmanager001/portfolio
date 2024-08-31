@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import styles from "../css/header.module.css";
+
 import DarkMode from '../../../portfolio/darkmode/DarkMode'
 
 
@@ -18,38 +18,38 @@ const Header = () => {
   };
 
   return (
-    <div className={styles.header}>
-      <div className={styles.left}>
-        <Link id={styles.link} to="/">
-          <h1>Robert Foley</h1>
+    <div className='flex justify-around items-center w-full p-2'>
+      <div className='flex justify-center items-center w-60 pl-5'>
+        <Link className='no-underline' to="/">
+          <h1 className="text-3xl">Robert Foley</h1>
         </Link>
       </div>
-      <div className={styles.right}>
+      <div className='flex justify-center items-center gap-3'>
         <DarkMode />
-        <div className={styles.remove}>
+        <div className='hidden md:flex items-center gap-3'>
           <>
             
             <Link to="/me">
-              <h3 id={styles.link}>Me</h3>
+              <h3 >Me</h3>
             </Link>
             <Link to="/portfolio">
-              <h3 id={styles.link}>Portfolio</h3>
+              <h3 >Portfolio</h3>
             </Link>
             <Link to="/blog">
-              <h3 id={styles.link}>Blog</h3>
+              <h3 >Blog</h3>
             </Link>
             <Link to="/photography">
-              <h3 id={styles.link}>Photography</h3>
+              <h3 >Photography</h3>
             </Link>
             <Link to="/contact">
-              <h3 id={styles.link}>Contact</h3>
+              <h3 >Contact</h3>
             </Link>
           </>
         </div>
-        <div className={styles.search}>
+        <div className='w-full flex justify-end items-center'>
           <div
-            className={`${styles.hamburgerIcon} ${
-              isMenuOpen ? styles.menuOpen : ""
+            className={`flex mr-6 text-2xl md:mr-0 md:hidden ${
+              isMenuOpen ? 'block' : ""
             }`}
             onClick={toggleMenu}
             aria-expanded={isMenuOpen}
@@ -58,7 +58,7 @@ const Header = () => {
           </div>
         </div>
         {isMenuOpen && (
-          <div className={styles.dropdownMenu}>
+          <div className='flex flex-col items-center absolute top-12 right-0 gap-3 w-52 z-10 bg-slate-700 md:hidden'>
             <>
               <Link onClick={toggleMenu} to="/me">
                 Me

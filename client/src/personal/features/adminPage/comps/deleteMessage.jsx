@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../css/delete.module.css"
 import { toast } from "react-hot-toast"
 import axios from "axios";
 
@@ -19,7 +18,7 @@ const DeleteMessage = ({ deleteId, onDeleteMessage }) => {
     }
   };
   return (
-    <button id={styles.delete} onClick={handleClick}>
+    <button className="btn btn-error p-3" onClick={handleClick}>
       Delete
     </button>
   );
