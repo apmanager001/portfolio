@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import styles from "../css/addBlog.module.css";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
@@ -64,10 +63,10 @@ const AddBlog = () => {
 
   return (
     <>
-      <div className={styles.addBlogContainer}>
+      <div className='flex justify-center flex-col gap-5 pt-12'>
         <form onSubmit={handleSubmit}>
           <input
-            className={styles.input}
+            className="input input-bordered w-full"
             type="text"
             name="title"
             placeholder="Title"
@@ -76,7 +75,7 @@ const AddBlog = () => {
           />
           <input
             type="file"
-            id={styles.image}
+            className="file-input file-input-bordered w-full"
             name="file"
             accept="image/*"
             onChange={handleFileChange}
@@ -84,7 +83,7 @@ const AddBlog = () => {
             required
           />
           <select
-            className={styles.input}
+            className="select select-bordered w-full"
             name="category"
             value={formData.category}
             onChange={handleChange}
@@ -93,7 +92,7 @@ const AddBlog = () => {
             <option value="portfolio">Robert Foley</option>
           </select>
           <input
-            className={styles.input}
+            className="input input-bordered w-full"
             type="text"
             name="resources"
             placeholder="Resources"
@@ -101,7 +100,7 @@ const AddBlog = () => {
             required
           />
           <input
-            className={styles.input}
+            className="input input-bordered w-full"
             type="text"
             name="tags"
             placeholder="Tags"
@@ -109,13 +108,13 @@ const AddBlog = () => {
             required
           />
           <textarea
-            className={styles.input}
+            className="textarea textarea-bordered w-full"
             name="message"
             placeholder="Message"
             onChange={handleChange}
             required
           />
-          <input type="submit" id={styles.button} value="Submit" required />
+          <input type="submit" className="btn btn-accent" value="Submit" required />
         </form>
       </div>
     </>

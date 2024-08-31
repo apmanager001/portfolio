@@ -6,7 +6,7 @@ import axios from 'axios'
 export const UserContext = createContext({});
 
 export function UserContextProvider({ children }) {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
   
 
   useEffect(() => {

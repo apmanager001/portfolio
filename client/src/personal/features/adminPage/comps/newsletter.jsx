@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import styles from '../css/newsletter.module.css'
 import axios from 'axios'
 
 const Newsletter = () => {
@@ -32,19 +31,20 @@ const Newsletter = () => {
 
   return (
     <>
-      <div className={styles.newsletterContainer}>
+      <div className="flex flex-col justify-center pt-12 overflow-x-auto">
         <h1>Crypto Begins Here</h1>
-          <table>
-            <thead>
-              <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            {generateNewsletterContainer()}
-          </table>
-        
+        <table className="table">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+          {generateNewsletterContainer()}
+          </tbody>
+        </table>
       </div>
     </>
   );
