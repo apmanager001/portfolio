@@ -11,7 +11,7 @@ export function UserContextProvider({ children }) {
 
   useEffect(() => {
     if (!user) {
-      axios.get("/profile").then(({ data }) => {
+      axios.get("/admin").then(({ data }) => {
         setUser(data);
         console.log(data)
         console.log("userContext logged in")
