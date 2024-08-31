@@ -3,7 +3,11 @@ const router = express.Router();
 const {registerUser, loginUser, logoutUser, getAdmin} = require('../controllers/userController')
 const cors = require("cors");
 
-const url = process.env.SERVER_URL;
+const url = [
+  process.env.SERVER_URL,
+  "http://localhost:5173",
+  "http://localhost:5174",
+];
 
 //middleware
 router.use(
