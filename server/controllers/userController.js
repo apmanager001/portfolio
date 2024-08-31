@@ -71,7 +71,7 @@ const loginUser = async (req, res) => {
           maxAge: 365 * 24 * 60 * 60 * 1000, // 1 year in milliseconds
           httpOnly: true,
           secure: true,
-          sameSite: "strict",
+          sameSite: "lax",
         })
         .json({ success: true });
     } else {
