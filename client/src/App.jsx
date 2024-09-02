@@ -26,7 +26,7 @@ function App() {
   const location = useLocation();
   const noHeaderFooterRoutes = ["/portfolio"];
   return (
-    <>
+    <div className="bg-gradient-to-b from-gray-800 to-slate-500">
       <Toaster position="top-center" toastOptions={{ duration: 8000 }} />
       {!noHeaderFooterRoutes.includes(location.pathname) && <Header />}
       <Routes>
@@ -46,7 +46,7 @@ function App() {
         <Route path="/tags/:id" element={<Tags />} />
       </Routes>
       {!noHeaderFooterRoutes.includes(location.pathname) && <Footer />}
-    </>
+    </div>
   );
 }
 

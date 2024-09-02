@@ -57,13 +57,13 @@ const Blog = () => {
               className={styles.link}
               key={blog.id}
             >
-              <div className={styles.box}>
-                <div className={styles.row}>
-                  <div className={styles.column1}>
+              <div className='text-left bg-base-100 rounded-md shadow-lg'>
+                <div className='flex h-full'>
+                  <div className=' flex justify-center w-32 '>
                     {blog.mainFile ? (
                       <img
                         src={blog.mainFile}
-                        className={styles.image}
+                        className='h-full w-full'
                         alt="Blog Image"
                         onError={handleImageError}
                       />
@@ -72,10 +72,10 @@ const Blog = () => {
                     )}
                   </div>
                   
-                  <div className={styles.column2}>
+                  <div className='flex-1 text-left pl-3 flex flex-col justify-evenly'>
                   <h2>{blog.title}</h2>
                   
-                <p className={styles.p}>{blog.truncatedMessage}</p>
+                <p className='text-xs text-gray-300'>{blog.truncatedMessage}</p>
                 </div>
                 <div className={styles.column3}>
                   <p>{blog.dateWithoutTime}</p>

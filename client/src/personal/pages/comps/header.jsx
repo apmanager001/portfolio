@@ -58,7 +58,7 @@ const Header = () => {
           </div>
         </div>
         {isMenuOpen && (
-          <div className='flex flex-col items-center absolute top-12 right-0 gap-3 w-52 z-10 bg-slate-700 md:hidden'>
+          <div className='flex flex-col items-center absolute top-12 right-0 gap-3 w-52 z-10 md:hidden'>
             <>
               <Link onClick={toggleMenu} to="/me">
                 Me
